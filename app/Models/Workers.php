@@ -9,4 +9,8 @@ class Workers extends Model
 {
     use HasFactory;
     protected $table = 'workers';
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
 }

@@ -26,4 +26,5 @@ Route::controller(StatisticController::class)->group(function(){
 
 Route::controller(RegisterController::class)->group(function(){
     Route::get('register','index')->name('register.index');
+    Route::post('register','register')->name('register.register');
 });
