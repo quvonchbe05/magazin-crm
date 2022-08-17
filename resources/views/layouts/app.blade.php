@@ -22,6 +22,7 @@
             </div>
             <!-- content -->
             <div class="bg-white tm-content p-5 tm-mt-big">
+                <h2 class="pb-3">@yield('content__title')</h2>
                 @yield('content')
             </div>
             <!-- end content -->

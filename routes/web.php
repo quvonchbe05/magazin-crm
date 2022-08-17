@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\StatisticController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('statistic.index');
+});
+
+
+Route::controller(StatisticController::class)->group(function(){
+    Route::get('statistic','index')->name('statistic.index');
+});
+
+Route::controller(RegisterController::class)->group(function(){
+    Route::get('register','index')->name('register.index');
 });
