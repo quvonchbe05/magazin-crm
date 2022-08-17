@@ -79,4 +79,12 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+
+    public function filterProducts(Request $request)
+    {
+        $products = DB::table('products')->where('cat_id',$request->cat_id)->get();
+        return response()->json([
+            'products' => $products
+        ]);
+    }
 }

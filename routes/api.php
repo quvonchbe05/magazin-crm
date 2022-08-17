@@ -50,3 +50,6 @@ Route::delete('deleteproduct/{id}',[ProductController::class, 'deleteProduct']);
 
 // Search Product
 Route::post('searchproduct',[ProductController::class, 'searchProduct']);
+
+// Filter By Category Products
+Route::post('filterproducts',[ProductController::class, 'filterProducts']);
