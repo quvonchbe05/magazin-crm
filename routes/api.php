@@ -47,3 +47,6 @@ Route::put('updateproduct/{id}',[ProductController::class, 'updateProduct']);
 
 // Delete Product
 Route::delete('deleteproduct/{id}',[ProductController::class, 'deleteProduct']);
+
+// Search Product
+Route::post('searchproduct',[ProductController::class, 'searchProduct']);
