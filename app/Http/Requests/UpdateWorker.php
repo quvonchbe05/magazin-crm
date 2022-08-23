@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Workers extends FormRequest
+class UpdateWorker extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,9 +28,7 @@ class Workers extends FormRequest
             'phone1' => 'required|numeric',
             't_sana' => 'required|date',
             'role' => 'required|integer',
-            'img' => 'required|max:2048',
-            'password' => 'required|min:8',
-            'email' => 'required|email|unique:workers.email'
+            'email' => 'required|email'
         ];
     }
 
@@ -46,9 +44,7 @@ class Workers extends FormRequest
             't_sana.required' => 'Tug\'ilgan sana kiritilishi shart!',
             't_sana.date' => 'Tug\'ilgan sana kun sanasi shaklida bo\'lishi kerak!',
             'role.required' => 'Lavozimni tanlang!',
-            'img.required' => 'Rasm kiritilishi shart!',
             'email.required' => "Email kiritilishi shart!",
-            'email.unique' => "Bu email ro'yxatdan o'tib bo'lgan!"
         ];
     }
 }

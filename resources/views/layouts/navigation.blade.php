@@ -12,17 +12,22 @@
         <ul class="navbar-nav mx-auto">
             @include('layouts.links', ['route' => route('statistic.index'), 'linkname' => 'Xisobot'])
             @include('layouts.links', ['route' => route('register.index'), 'linkname' => 'Ishchilar'])
+            @include('layouts.links', ['route' => route('products.index'), 'linkname' => 'Maxsulotlar'])
+            @include('layouts.links', ['route' => route('categories.index'), 'linkname' => 'Kategoriyalar'])
+            @include('layouts.links', ['route' => route('basket.index'), 'linkname' => 'Sotuv bo\'imi'])
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('basket.basket') }}">Savat</a>
+            </li>            
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user pr-2"></i>
-                    {{-- {{ Auth::user()->name }} --}}
-                    Quvonchbek Murodov
+                    {{ Auth::user()->fish }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    {{-- <a class="dropdown-item" href="{{ route('logout') }}">Выйти</a> --}}
+                    <a class="dropdown-item" href="{{ route('logout') }}">Chiqish</a>
                 </div>
             </li>
         </ul>

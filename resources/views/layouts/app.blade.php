@@ -22,7 +22,7 @@
             </div>
             <!-- content -->
             <div class="bg-white tm-content p-5 tm-mt-big">
-                <h2 class="pb-3">@yield('content__title')</h2>
+                <h2 class="pb-5 alert alert-light text-center">@yield('content__title')</h2>
                 @yield('content')
             </div>
             <!-- end content -->
@@ -31,6 +31,7 @@
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>
