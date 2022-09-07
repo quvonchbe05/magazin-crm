@@ -14,7 +14,7 @@ class StatisticController extends Controller
     {
         $date = date('Y-m-d');
         $month = date('Y-m');
-        $saleds = SaledGroup::where('created_at', 'like', '%' . $date . '%')->orderByDesc('updated_at')->paginate(15);
+        $saleds = SaledGroup::where('updated_at', 'like', '%' . $date . '%')->orderByDesc('updated_at')->paginate(15);
         $sumday = Saled::where('created_at', 'like', '%' . $date . '%')->sum('summa');
         $summonth = Saled::where('created_at', 'like', '%' . $month . '%')->sum('summa');
         $workers = Worker::orderByDesc('id')->get();
