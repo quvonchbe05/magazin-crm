@@ -15,6 +15,11 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function addForm()
+    {
+        return view('categories.create');
+    }
+
     public function addCategory(Request $request)
     {
         $request->validate([
@@ -24,6 +29,14 @@ class CategoryController extends Controller
         $category->cat_name = $request->cat_name;
         $category->save();
         return redirect()->back()->with('success',"Kategoriya qo'shildi!");
+    }
+
+    public function updateForm($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('categories.update',[
+            'category' => $category
+        ]);
     }
 
     public function updateCategory(Request $request,$id)
@@ -37,10 +50,18 @@ class CategoryController extends Controller
         return redirect()->back()->with('success',"Kategoriya taxrirlandi!");
     }
 
+    public function deletePage($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('categories.delete',[
+            'category' => $category
+        ]);
+    }
+
     public function deleteCategory($id)
     {
         $category = Category::findOrFail($id);
         $category->delete();
-        return redirect()->back()->with('success',"Kategoriya O'chirildi!");
+        return redirect()->route('categories.index')->with('success',"Kategoriya O'chirildi!");
     }
 }

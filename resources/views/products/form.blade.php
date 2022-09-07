@@ -24,11 +24,11 @@ Maxsulotni taxrirlash
     @csrf
     @method('PUT')
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="name">Nomi</label>
             <input type="text" class="form-control" value="{{ $product->name }}" id="name" name="name" required>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="category">Kategoriyasi</label>
             <select class="form-control" id="category" name="cat_id" required>
                 <option value="">----</option>
@@ -39,25 +39,25 @@ Maxsulotni taxrirlash
                 @endforeach
             </select>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="amount">Soni/Kg</label>
             <input type="number" class="form-control" value="{{ $product->amount }}" id="amount" name="amount" required>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="original_price">Asl narxi</label>
             <input type="number" class="form-control" value="{{ $product->original_price }}" id="original_price"
                 name="original_price" required>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="sale_price">Sotiladigan narxi</label>
             <input type="number" class="form-control" value="{{ $product->sale_price }}" id="sale_price"
                 name="sale_price" required>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="deadLine">Saqlash muddati</label>
             <input type="date" class="form-control" value="{{ $product->deadLine }}" id="deadLine" name="deadLine">
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 my-4">
             <label for="postedBy">Maxsulotni qabul qilgan xodim</label>
             <select name="postedBy" id="postedBy" class="form-control" required>
                 <option value="">----</option>
@@ -68,15 +68,15 @@ Maxsulotni taxrirlash
                 @endforeach
             </select>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 my-4  ">
             <label for="description">Qo'shimcha ma'lumot</label>
             <textarea name="description" class="form-control" id="description" rows="4"
                 placeholder="Maxsulot xaqida qo'shimcha ma'lumot" required>{{ $product->description }}</textarea>
         </div>
     </div>
     <div class="d-flex justify-content-end">
-        <a href="{{ route('products.index') }}" class="btn btn-primary">Orqaga</a>
-        <button type="submit" class="btn btn-primary">Taxrirlash</button>
+        <a href="{{ route('products.index') }}" class="btn btn-primary my-4 mx-1">Orqaga</a>
+        <button type="submit" class="btn btn-primary my-4">Taxrirlash</button>
     </div>
 </form>
 @endsection

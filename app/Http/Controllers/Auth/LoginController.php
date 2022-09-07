@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Login;
-use App\Models\Workers;
+use App\Models\Worker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +19,7 @@ class LoginController extends Controller
 
     public function login(Login $request)
     {
-        $email = Workers::where('email', $request->email)->first();
+        $email = Worker::where('email', $request->email)->first();
         $password = Hash::check($request->password, $email->password);
         if(!$password){
             throw ValidationException::withMessages([

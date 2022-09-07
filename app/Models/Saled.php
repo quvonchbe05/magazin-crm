@@ -9,4 +9,12 @@ class Saled extends Model
 {
     use HasFactory;
     protected $table = "saleds";
+    public function products()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
+    public function worker()
+    {
+        return $this->belongsTo(Worker::class, 'worker_id');
+    }
 }

@@ -1,3 +1,5 @@
-<li class="nav-item">
-    <a class="nav-link" href="{{ $route }}">{{ $linkname }}</a>
-</li>
+<li class="">
+    <a href="{{ $route }}" class=" my-2">
+      <span>{{ $linkname }}</span>
+    </a>
+  </li>

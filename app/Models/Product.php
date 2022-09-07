@@ -15,6 +15,6 @@ class Product extends Model
     }
     public function worker()
     {
-        return $this->belongsTo(Workers::class, 'postedBy');
+        return $this->belongsTo(Worker::class, 'postedBy');
     }
 }

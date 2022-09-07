@@ -1,0 +1,5 @@
+@media print {
+    .btn,input,select,a,.desktop-header,.pagination,label{
+        display: none!important;
+    }
+}
