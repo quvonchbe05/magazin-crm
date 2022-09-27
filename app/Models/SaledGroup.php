@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SaledGroup extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     public function products()
     {
         return $this->belongsTo(Product::class, 'product_id');

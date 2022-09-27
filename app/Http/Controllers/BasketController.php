@@ -103,12 +103,15 @@ class BasketController extends Controller
             if (count($group) === 1) {
                 $group = SaledGroup::where('product_id', $value->product_id)->where('worker_id', Auth::user()->id)->where('created_at', 'like', '%' . date('Y-m-d') . '%')->first();
                 $group->product_count = $group->product_count + $value->product_count;
+                $group->updated_at  = date("Y-m-d h:i:s");
                 $group->save();
             } else {
                 $newGroup = new SaledGroup();
                 $newGroup->product_id = $value->product_id;
                 $newGroup->worker_id = $value->worker_id;
                 $newGroup->product_count = $value->product_count;
+                $newGroup->created_at  = date("Y-m-d h:i:s");
+                $newGroup->updated_at  = date("Y-m-d h:i:s");
                 $newGroup->save();
             }
             $new = new Saled();
@@ -161,12 +164,15 @@ class BasketController extends Controller
         if (count($group) === 1) {
             $group = SaledGroup::where('product_id', $product->id)->where('worker_id', Auth::user()->id)->where('created_at', 'like', '%' . date('Y-m-d') . '%')->first();
             $group->product_count = $group->product_count + $request->product_count;
+            $group->updated_at  = date("Y-m-d h:i:s");
             $group->save();
         } else {
             $newGroup = new SaledGroup();
             $newGroup->product_id = $product->id;
             $newGroup->worker_id = Auth::user()->id;
             $newGroup->product_count = $request->product_count;
+            $newGroup->created_at  = date("Y-m-d h:i:s");
+            $newGroup->updated_at  = date("Y-m-d h:i:s");
             $newGroup->save();
         }
         $new = new Saled();

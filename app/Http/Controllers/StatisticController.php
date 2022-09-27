@@ -197,6 +197,7 @@ class StatisticController extends Controller
         $product = Product::findOrFail($basket->product_id);
         $product->amount = $product->amount + $basket->product_count;
         $saledGroup->product_count = $saledGroup->product_count - $basket->product_count;
+        $saledGroup->updated_at  = $saledGroup->updated_at;
         $saledGroup->save();
         $product->save();
         $basket->delete();
@@ -217,9 +218,10 @@ class StatisticController extends Controller
         $basket = Saled::findOrFail($id);
         $saledGroup = SaledGroup::where('product_id',$basket->product_id)->where('updated_at','like','%'.substr(($basket->updated_at),0,10).'%')->where('worker_id',$basket->worker_id)->first();
         $saledGroup->product_count = $saledGroup->product_count - $basket->product_count;
+        $saledGroup->updated_at  = $saledGroup->updated_at;
         $saledGroup->save();
         $basket->delete();
-        return redirect()->route('statistic.more')->with('success', "O'chirildi!");
+        return redirect()->route('statistic.index')->with('success', "O'chirildi!");
     }
 
     public function views()
